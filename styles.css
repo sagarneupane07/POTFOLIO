@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: #0a0a0c; /* Ultra deep dark cinema color */
+    background-color: #0a0a0c;
     color: #F5F5F5;
     line-height: 1.7;
     overflow-x: hidden;
@@ -38,15 +38,15 @@ body {
     z-index: 1;
 }
 
-/* --- Blurs & Widescreen Navigation --- */
+/* --- Widescreen & Responsive Navigation --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(18, 18, 18, 0.6); 
-    backdrop-filter: blur(20px); /* Glassmorphism background effect */
+    background: rgba(18, 18, 18, 0.75); 
+    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 1.5rem 4rem;
+    padding: 1.2rem 8%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -55,19 +55,16 @@ body {
 
 .navbar .logo {
     color: #F5F5F5;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 4px; /* Cinematic spacing */
+    letter-spacing: 4px;
     text-transform: uppercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-}
-
-.nav-links li {
-    margin-left: 3rem;
+    gap: 2rem;
 }
 
 .nav-links a {
@@ -85,19 +82,20 @@ body {
     text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 
-/* --- The Film Frame Title Section (Hero) --- */
+/* --- Hero Section --- */
 .hero {
-    height: 85vh;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 2rem 1.5rem;
     background: radial-gradient(circle at center, #141419 0%, #0a0a0c 100%);
     position: relative;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 300;
     margin-bottom: 1rem;
     color: #F5F5F5;
@@ -110,7 +108,6 @@ body {
     text-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
 }
 
-/* Cinematic Lens Breathing Animation Effect */
 .cinematic-lens-float {
     animation: lensBreathing 6s ease-in-out infinite;
 }
@@ -122,19 +119,21 @@ body {
     }
     50% {
         transform: scale(1.02) translateY(-8px);
-        filter: blur(0.3px); /* Subtle shift in focal distance mimicry */
+        filter: blur(0.3px);
     }
 }
 
-/* --- Typewriter Alignment --- */
+/* --- Typewriter --- */
 .typewriter-container {
-    margin-bottom: 3.5rem;
-    height: 30px;
+    margin-bottom: 3rem;
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
 }
 
 .subtitle-text {
-    font-size: 1.1rem;
-    letter-spacing: 3px;
+    font-size: clamp(0.85rem, 2vw, 1.1rem);
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: #666666;
 }
@@ -146,6 +145,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
+    max-width: 100%;
     animation: typing 4s steps(30, end) infinite, blink-caret 0.8s step-end infinite;
 }
 
@@ -159,13 +159,13 @@ body {
     50% { border-color: #00E5FF }
 }
 
-/* --- Minimalist Cinematic Key Trigger Button --- */
+/* --- Buttons --- */
 .cinema-btn {
     position: relative;
     display: inline-block;
     background: transparent;
     text-decoration: none;
-    padding: 1rem 3rem;
+    padding: 0.9rem 2.2rem;
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -174,7 +174,7 @@ body {
 
 .cinema-btn span {
     color: #ffffff;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -188,15 +188,15 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- Section Heading Templates --- */
+/* --- Section Headings --- */
 .section-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 6px;
     text-align: center;
     color: #888888;
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
 }
 
 .section-title::after {
@@ -209,9 +209,9 @@ body {
     box-shadow: 0 0 8px #00E5FF;
 }
 
-/* --- About Grid Realignment --- */
+/* --- Responsive Layout Structure --- */
 section {
-    padding: 8rem 4rem;
+    padding: 5rem 8%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -220,26 +220,29 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 @media (min-width: 900px) {
     .about-container {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
     }
 }
 
-/* Profile Picture Cinematic Lighting Frame Overlay */
 .about-image-wrapper {
     position: relative;
+    width: 240px;
+    height: 240px;
+    flex-shrink: 0;
 }
 
 .about-image-wrapper img {
-    width: 260px;
-    height: 260px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 4px; /* Squared film style box frame */
+    border-radius: 4px;
     filter: grayscale(20%) contrast(110%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
@@ -250,8 +253,8 @@ section {
     position: absolute;
     top: -10px;
     left: -10px;
-    width: 280px;
-    height: 280px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
     border: 1px solid rgba(0, 229, 255, 0.2);
     border-radius: 4px;
     pointer-events: none;
@@ -265,10 +268,10 @@ section {
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #aaaaaa;
     font-weight: 300;
-    line-height: 1.9;
+    line-height: 1.8;
     margin-bottom: 1.5rem;
 }
 
@@ -277,17 +280,17 @@ section {
     font-weight: 500;
 }
 
-/* --- Film Grid Element Panels (Showcase) --- */
+/* --- Project Grid --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
 .project-card {
     background-color: #111114;
     border: 1px solid rgba(255, 255, 255, 0.03);
-    padding: 2.5rem 2rem;
+    padding: 2rem 1.8rem;
     border-radius: 4px;
     position: relative;
     overflow: hidden;
@@ -301,21 +304,21 @@ section {
 }
 
 .project-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 400;
     letter-spacing: 1px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: #ffffff;
 }
 
 .project-card p {
     color: #777777;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 300;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
-/* --- Contact Outro Layout Rules --- */
+/* --- Contact Section --- */
 .contact {
     text-align: center;
     border-top: 1px solid rgba(255, 255, 255, 0.02);
@@ -324,15 +327,15 @@ section {
 .contact-desc {
     color: #777777;
     max-width: 600px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 2.5rem auto;
     font-weight: 300;
+    font-size: 0.95rem;
 }
 
 .contact-links p {
-    margin: 1rem 0;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    font-weight: 300;
+    margin: 0.8rem 0;
+    font-size: 0.95rem;
+    word-break: break-word;
 }
 
 .accent-link {
@@ -347,7 +350,7 @@ section {
 }
 
 .btn-container {
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
 }
 
 .linkedin-btn {
@@ -355,7 +358,7 @@ section {
     background-color: transparent;
     color: #ffffff;
     border: 1px solid #0077b5;
-    padding: 0.9rem 2.5rem;
+    padding: 0.8rem 2rem;
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -371,14 +374,47 @@ section {
     transform: translateY(-2px);
 }
 
-/* --- End Credits Footer Panel --- */
+/* --- Footer --- */
 footer {
     background-color: #070709;
     color: #444444;
     text-align: center;
-    padding: 3rem;
-    font-size: 0.8rem;
+    padding: 2.5rem 1rem;
+    font-size: 0.75rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     border-top: 1px solid rgba(255, 255, 255, 0.01);
+}
+
+/* --- Mobile Specific Overrides --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+    }
+
+    .nav-links a {
+        font-size: 0.75rem;
+    }
+
+    section {
+        padding: 4rem 5%;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter-text {
+        white-space: normal;
+        border-right: none;
+        animation: none;
+    }
 }
