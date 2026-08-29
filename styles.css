@@ -502,7 +502,6 @@ footer {
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
         gap: 1rem;
         padding: 1rem;
     }
