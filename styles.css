@@ -47,7 +47,7 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.3S ease, color 0.3S ease;
 }
 
 /* --- Atmospheric Overlays --- */
@@ -87,7 +87,7 @@ body {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
-    transition: background 0.4s ease;
+    transition: background 0.3S ease;
 }
 
 /* --- Logo Styles --- */
@@ -146,7 +146,7 @@ body {
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: color 0.4s ease, text-shadow 0.4s ease;
+    transition: color 0.3S ease, text-shadow 0.3S ease;
 }
 
 .nav-links a:hover {
@@ -184,7 +184,7 @@ body {
     padding: 2rem 1.5rem;
     background: var(--bg-hero);
     position: relative;
-    transition: background 0.4s ease;
+    transition: background 0.3s ease;
 }
 
 .hero h1 {
@@ -262,7 +262,7 @@ body {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: all 0.4s ease;
+    transition: all 0.3S ease;
 }
 
 .cinema-btn span {
@@ -387,7 +387,7 @@ section {
     border-radius: 4px;
     position: relative;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3S cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover {
@@ -458,7 +458,7 @@ section {
     letter-spacing: 2px;
     text-decoration: none;
     border-radius: 4px;
-    transition: all 0.4s ease;
+    transition: all 0.3S ease;
 }
 
 .linkedin-btn:hover {
@@ -478,7 +478,7 @@ footer {
     letter-spacing: 2px;
     text-transform: uppercase;
     border-top: 1px solid var(--border-color);
-    transition: background 0.4s ease;
+    transition: background 0.3S ease;
 }
 
 /* --- Mobile Responsiveness --- */
