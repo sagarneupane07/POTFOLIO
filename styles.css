@@ -343,8 +343,6 @@ section {
 }
 
 .about-image-wrapper {
-    position: relative;
-    width: 240px;
     height: 240px;
     flex-shrink: 0;
 }
